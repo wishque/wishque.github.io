@@ -1,6 +1,7 @@
 ---
 title: "Ansible"
 date: 2023-05-22 19:33:55
+summary: 
 draft: true
 ---
 > （第一版ansible README）Ansible is a extra-simple Python API for doing 'remote things' over SSH.
