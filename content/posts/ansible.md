@@ -1,5 +1,5 @@
 ---
-title: "ansible(一)"
+title: "ansible(一) 概览"
 date: 2023-02-21T13:05:39+08:00
 categories: ["ansible"]
 ---
