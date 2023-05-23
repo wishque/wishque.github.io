@@ -1,9 +1,15 @@
 ---
 title: "ansible(一) 概览"
 date: 2023-02-21T13:05:39+08:00
-categories: ["ansible"]
+categories: [ansible]
 ---
 > （ansible第一次提交 README）Ansible is a extra-simple Python API for doing 'remote things' over SSH.
+## ansible命令
+
+常见用法
+
+`ansible -m module_name -a module_args -i inventory --private_key private_key_file pattern`
+
 ## 基本流程
 
 [ansible第一次提交](https://github.com/ansible/ansible/commit/f31421576b00f0b167cdbe61217c31c21a41ac02)
