@@ -83,7 +83,9 @@ languageName = "简体中文"
 
 # Markup related configuration in Hugo
 [markup]
+    defaultMarkdownHandler = 'goldmark'
   # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
   [markup.highlight]
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+    # style = "dracula"
