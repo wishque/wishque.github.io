@@ -261,7 +261,7 @@ class Runner:
       action: service name=httpd state=restarted
 ```
 
-在tag v0.0.1版本中，playbook的解析也不复杂，将playbook.yaml解析为字典后，对host_list中每一个host依次执行tasks列表的每一个task,如果结果为changed，则标记notify handler（将host加入handler.run列表)。然后对被标记的handler,对run列表中的每一个hosts依次执行。
+在tag v0.0.1版本中，playbook的解析也不复杂，将playbook.yaml解析为字典后，依次取出tasks列表的每一个task,对hosts_list中所有的host执行。如果结果为changed，则标记notify handler（将host加入handler.run列表)。对被标记的handler,对run列表中的每一个hosts依次执行。
 
 
 ``` python
