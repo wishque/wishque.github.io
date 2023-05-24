@@ -4,6 +4,7 @@ date: 2023-02-21T13:05:39+08:00
 categories: [ansible]
 ---
 > （ansible第一次提交 README）Ansible is a extra-simple Python API for doing 'remote things' over SSH.
+
 ## ansible命令
 
 常见用法
@@ -13,7 +14,8 @@ categories: [ansible]
 ## 基本流程
 
 [ansible第一次提交](https://github.com/ansible/ansible/commit/f31421576b00f0b167cdbe61217c31c21a41ac02)
-代码简化后如下
+
+代码简化后如下:
 
 ```python
 class Runner:
@@ -51,6 +53,7 @@ class Pooler:
 ```
 
 虽说在第一次commit之后十年，ansible已经被修改了几十万次,但是ansible做的事情没有变.
+
 1. 连接host（通常通过ssh）
 2. 复制module文件到host的临时文件夹（通常通过sftp,scp）
 3. 执行该module（一般是python文件）
@@ -58,15 +61,11 @@ class Pooler:
 
 通过添加`ANSIBLE_KEEP_REMOTE_FILES=1`环境变量，可以让ansible保留module文件（默认位于~/.ansible/tmp/文件夹下)。例如执行下面这个命令后，可以在该文件夹下找到AnsiballZ\_ping.py文件。
 
-```
-ANSIBLE_KEEP_REMOTE_FILES=1 ansible -m ping  localhost
-```
+`ANSIBLE_KEEP_REMOTE_FILES=1 ansible -m ping  localhost`
 
 由于执行模块有可能是异步的，这会导致删除模块和执行模块同时进行。所以ANsiballZ\_ping.py文件会执行位于系统临时文件夹的模块文件，临时文件由系统在ansible执行后自动删除，这是为了修复该问题。 可以在执行下面命令后在debug_dir目录下找到真正的模块文件。
 
-```
-python3 AnsibllZ_ping.py explode
-```
+` python3 AnsibllZ_ping.py explode `
 
 ```python
 from ansible.module_utils.basic import AnsibleModule
@@ -269,7 +268,6 @@ class Runner:
 
 在tag v0.0.1版本中，playbook的解析也不复杂，将playbook.yaml解析为字典后，依次取出tasks列表的每一个task,对hosts_list中所有的host执行。如果结果为changed，则标记notify handler（将host加入handler.run列表)。对被标记的handler,对run列表中的每一个hosts依次执行。
 
-
 ``` python
 class Playbook:
     def __init__(self,...):
@@ -340,5 +338,6 @@ class Playbook:
 ```
 
 ## 总结
+
 ansible是一款非常好用的运维工具，由于几乎每一台linux都装了python，他将运维每天都在做的事情通过python模块化，并且提供了inventory和playbook来将模块的执行顺序，执行机器进行编排。
 
