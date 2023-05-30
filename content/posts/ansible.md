@@ -215,7 +215,7 @@ green.bikeshed.org
 www01.bikeshed.org
 ```
 
-在这一版本的，inventory的解析规则十分的简单，有三种，去除头尾空格后，\[开头的行为group_name,#开头的行为注释行,其余的行为host
+在这一版本的，inventory的解析规则十分的简单，有三种，去除头尾空格后，\[开头的行为group\_name,#开头的行为注释行,其余的行为host
 
 ``` python
 class Runner:
@@ -227,6 +227,7 @@ class Runner:
         groups['ungrouped'] = []
         #初始group_name为ungrouped
         group_name = 'ungrouped'
+        #results存放了所有hosts
         results    = []
         #顺序读取每一行
         for item in lines:
