@@ -1,0 +1,26 @@
+baseURL = "https://gaonut.github.io/"
+
+# Change the default theme to be use when building the site with Hugo
+theme = "LoveIt"
+
+# website title
+title = "blog"
+
+# language code ["en", "zh-CN", "fr", "pl", ...]
+languageCode = "zh-CN"
+# language name ["English", "简体中文", "Français", "Polski", ...]
+languageName = "简体中文"
+
+# Author config
+[author]
+  name = ""
+  email = ""
+  link = ""
+
+# Markup related configuration in Hugo
+[markup]
+    defaultMarkdownHandler = 'goldmark'
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
