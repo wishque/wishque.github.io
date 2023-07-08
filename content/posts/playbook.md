@@ -25,4 +25,3 @@ draft: true
 ### 引用task文件作为handlers
 ## roles
 ## ansible-playbook命令
-
